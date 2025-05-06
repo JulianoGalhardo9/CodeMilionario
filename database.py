@@ -1,14 +1,15 @@
 import mysql.connector
 from mysql.connector import Error
+from credenciais import host, user, database, password
 
 class Database:
     def __init__(self):
         try:
             self.connection = mysql.connector.connect(
-                host='localhost',     
-                user='root',    # Substitua pelo seu usuário do MySQL
-                password='juliano2013',  # Substitua pela sua senha do MySQL
-                database='jogodomilhao'   # Nome do banco de dados que você criará no MySQL
+                host= host,     
+                user= user,    
+                password= password, 
+                database= database   
             )
 
             self.cursor = self.connection.cursor()
